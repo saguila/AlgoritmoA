@@ -1,12 +1,5 @@
 import Queue as q
-'''
->     __gt__
-<     __lt__
->=    __ge__
-<=    __le__
-==    __eq__
-!=    __ne__
-'''
+
 class AlgoritmoA:
         def __init__(self,mapa,partida,objetivo,N,M):
             self.partida = partida
@@ -25,18 +18,28 @@ class AlgoritmoA:
             return int(((punto.y // self.N)*self.N) + (punto.x))
             
         def solucion(self):
-            #mirar arriba
+            aux = Casilla()
+            #mirar arriba coste Mov 10
             if self.partida >= self.N && self.mapa[self.partida - self.N] != -1:
-            #mirar esquina superior derecha
-            if self.mapa[self.partida] >= N && 
-            #mirar derecha
-            if
-            #mirar esquina inferior izquierda
-            #mirar abajo
-            if self.partida < self.M * (self.N - 1)  && self.mapa[self.partida + self.N] != -1:
-            #mirar esquina inferior izquierda
-            #mirar izquierda
-            #mirar esquina superior izquierda
+                self.a
+            #mirar esquina superior derecha coste Mov 10
+            if self.partida >= self.N && self.partida % self.N < (self.N - 1) && self.mapa[self.partida - (self.N - 1)] != -1:
+                
+            #mirar derecha costeMov
+            if self.partida % self.N < (self.N - 1) && self.mapa[self.partida + 1] != -1:
+                
+            #mirar esquina inferior derecha coste Mov 14
+            if self.partida < self.M * (self.N - 1) && self.partida % self.N < (self.N - 1) && self.mapa[self.partida + self.N + 1] != -1:
+            #mirar abajo coste Mov 10
+            if self.partida < self.M * (self.N - 1) && self.mapa[self.partida + self.N] != -1:
+            #mirar esquina inferior izquierda coste mov 14
+            if self.partida < self.M * (self.N - 1) && self.partida % self.N > 0 && self.mapa[self.partida + self.N - 1] != -1:
+            #mirar izquierda coste mov 10
+            if self.partida % self.N  > 0 && self.mapa[self.partida - 1] != -1:
+            #mirar esquina superior izquierda coste Mov 14
+            if self.partida >= self.N && self.partida % self.N  > 0 && self.mapa[self.partida - self.N - 1] != -1:
+                
+                self.cerrada.append(self.)
         
 class Casilla:
     def __init__(self,pos,coste):
@@ -44,6 +47,9 @@ class Casilla:
         self.coste = int(coste)
     def __lt__(self,casilla):
         return self.coste < casilla.coste
+    def __repr__(self): #Como mostramos la informacion de nuestro punto.
+        return 'Posicion -> ' + self.pos + ' Coste -> ' + self.coste
+
 class Punto:
     def __init__(self,x,y):
         self.x = int(x)
